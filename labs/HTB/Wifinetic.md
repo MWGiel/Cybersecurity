@@ -139,12 +139,6 @@ The network interfaces show that `mon0` is already in monitor mode. The access p
 02:00:00:00:00:00
 ```
 
-The original writeup uses `reaver` against the access point:
-
-```bash
-reaver -i mon0 -b 02:00:00:00:00:00 -vv
-```
-
 The reported result is:
 
 ```text
