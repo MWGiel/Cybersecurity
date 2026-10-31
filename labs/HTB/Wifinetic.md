@@ -1,4 +1,4 @@
-# HTB Wifinetic — Writeup
+# HTB Wifinetic - Writeup
 
 **Machine:** Wifinetic  
 **Target IP:** `<IP>`  
@@ -29,7 +29,7 @@ nmap -sCV <IP>
 
 | Port | Service | Findings |
 |---|---|---|
-| `21/tcp` | FTP | vsftpd 3.0.3 — anonymous login allowed |
+| `21/tcp` | FTP | vsftpd 3.0.3 - anonymous login allowed |
 | `22/tcp` | SSH | OpenSSH 8.2p1 |
 | `53/tcp` | DNS | tcpwrapped |
 
@@ -37,7 +37,7 @@ nmap -sCV <IP>
 
 ## 2. Enumeration
 
-### FTP — Port 21
+### FTP - Port 21
 
 Nmap reveals that anonymous FTP login is allowed. We connect and list the available files:
 
@@ -71,8 +71,8 @@ tar -xvf backup-OpenWrt-2023-07-26.tar
 
 Looking through the extracted files, we focus on the network and user configurations:
 
-- `etc/passwd` — reveals a custom user named `netadmin`.
-- `etc/config/wireless` — contains the Wi-Fi configuration.
+- `etc/passwd` - reveals a custom user named `netadmin`.
+- `etc/config/wireless` - contains the Wi-Fi configuration.
 
 Read the wireless configuration:
 
