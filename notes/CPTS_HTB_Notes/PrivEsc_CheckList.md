@@ -15,3 +15,4 @@ cat /etc/systemd/system/*dlq* 2>/dev/null
 cat /etc/systemd/system/*drain* 2>/dev/null
 cat /etc/systemd/system/*aidx* 2>/dev/null
 ```
+- sudoers for every vhost and user
