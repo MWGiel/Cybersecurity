@@ -266,7 +266,7 @@ cat /home/ike/user.txt
 
 ### 7.1 Why Does `ping offramp.expressway.htb` Fail?
 
-`offramp.expressway.htb` is used as a hostname in the sudoers configuration; it does not necessarily represent a reachable network host.
+`offramp.expressway.htb` is used as a hostname in the sudoers configuration, it does not necessarily represent a reachable network host.
 
 The `-h` option tells `sudo` to evaluate rules defined for the specified host. Sudo reads the local `/etc/sudoers` configuration and matches the hostname against its rules. It does not need to establish a network connection or resolve the name through DNS.
 
