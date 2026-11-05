@@ -1,10 +1,8 @@
-# HTB Expressway — Writeup
+# HTB Expressway - Writeup
 
 **Machine:** Expressway  
-**Platform:** Hack The Box  
 **Difficulty:** Medium  
-**Attack path:** TFTP → configuration leak → PSK recovery → SSH → Squid logs → sudo privilege escalation  
-**CVE:** CVE-2025-32463 (sudo chroot) — optional
+
 
 ---
 
