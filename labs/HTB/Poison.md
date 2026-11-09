@@ -9,9 +9,9 @@
 ## Table of Contents
 
 1. [Enumeration](#1-enumeration)
-2. [Initial Foothold — LFI and Log Poisoning](#2-initial-foothold--lfi-and-log-poisoning)
-3. [User Access — SSH](#3-user-access--ssh)
-4. [Privilege Escalation — VNC](#4-privilege-escalation--vnc)
+2. [Initial Foothold - LFI and Log Poisoning](#2-initial-foothold--lfi-and-log-poisoning)
+3. [User Access - SSH](#3-user-access--ssh)
+4. [Privilege Escalation - VNC](#4-privilege-escalation--vnc)
 5. [Attack Path Summary](#5-attack-path-summary)
 
 ---
@@ -39,7 +39,7 @@ Navigating to the web server at `http://<IP>` reveals a simple page and reveals 
 - `phpinfo.php`
 - `pwdbackup.txt`
 
-## 2. Initial Foothold — LFI and Log Poisoning
+## 2. Initial Foothold - LFI and Log Poisoning
 
 Inspecting `browse.php`, we can see that it takes a `file` parameter:
 
@@ -106,7 +106,7 @@ This reveals the SSH password for the user `charix`:
 Charix!2#4%6&8(0
 ```
 
-## 3. User Access — SSH
+## 3. User Access - SSH
 
 With the credentials in hand, we log in via SSH:
 
@@ -121,7 +121,7 @@ Once logged in, we retrieve the user flag:
 cat /home/charix/user.txt
 ```
 
-## 4. Privilege Escalation — VNC
+## 4. Privilege Escalation - VNC
 
 Inside `/home/charix`, we notice a `secret.zip` archive:
 
