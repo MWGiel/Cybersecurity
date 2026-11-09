@@ -5,7 +5,6 @@
 | **Machine** | Poison |
 | **Operating System** | FreeBSD 11.1 |
 | **Difficulty** | Medium |
-| **Target IP** | `<IP>` |
 
 ## Table of Contents
 
