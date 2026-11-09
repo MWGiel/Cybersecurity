@@ -31,7 +31,7 @@ The scan reveals two open ports:
 | `22/tcp` | OpenSSH 7.5 (FreeBSD) |
 | `80/tcp` | Apache httpd 2.4.29 (FreeBSD) |
 
-Navigating to the web server at `http://<IP>` reveals a simple page. Directory fuzzing with Gobuster reveals several interesting files:
+Navigating to the web server at `http://<IP>` reveals a simple page and reveals several interesting files:
 
 - `browse.php`
 - `listfiles.php`
