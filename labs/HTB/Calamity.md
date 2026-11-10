@@ -3,16 +3,15 @@
 | Field | Value |
 |---|---|
 | **Machine** | Calamity |
-| **Operating System** | Linux (Ubuntu 16.04.2 LTS) |
 | **Difficulty** | Medium |
-| **Target IP** | `<IP>` |
+
 
 ## Table of Contents
 
 1. [Enumeration](#1-enumeration)
-2. [Initial Foothold — Web Application](#2-initial-foothold--web-application)
-3. [Pivoting to User — xalvas](#3-pivoting-to-user--xalvas)
-4. [Privilege Escalation — LXD](#4-privilege-escalation--lxd)
+2. [Initial Foothold - Web Application](#2-initial-foothold--web-application)
+3. [Pivoting to User - xalvas](#3-pivoting-to-user--xalvas)
+4. [Privilege Escalation - LXD](#4-privilege-escalation--lxd)
 5. [Attack Path Summary](#5-attack-path-summary)
 
 ---
@@ -34,7 +33,7 @@ Checking the web root, we find a standard page. Directory fuzzing with `ffuf` or
 | `/admin.php` | `200` | Administration login page |
 | `/uploads/` | `301` | Directory listing enabled, but empty |
 
-## 2. Initial Foothold — Web Application
+## 2. Initial Foothold - Web Application
 
 Navigating to `http://<IP>/admin.php`, we are presented with a login form.
 
@@ -63,7 +62,7 @@ Testing the interpreter with PHP confirms server-side PHP code execution:
 
 We obtain Remote Code Execution (RCE) as `www-data`.
 
-### Getting a shell — the janitor bypass
+### Getting a shell - the janitor bypass
 
 Attempts to obtain a reverse shell using standard methods fail because the shell process is terminated shortly after starting.
 
@@ -83,7 +82,7 @@ Then trigger a reverse shell using the renamed binary:
 
 Alternatively, the original notes mention using a webshell such as `phpbash.php` or a static C reverse shell.
 
-## 3. Pivoting to User — xalvas
+## 3. Pivoting to User - xalvas
 
 With a shell as `www-data`, we enumerate local users and home directories:
 
@@ -94,7 +93,7 @@ ls -la /home/
 
 We find a user named `xalvas`. The following files in `/home/xalvas/` are interesting:
 
-- `user.txt` — readable by `www-data`
+- `user.txt` - readable by `www-data`
 - `recov.wav`
 - `alarmclocks/rick.wav`
 - `intrusions`
@@ -115,7 +114,7 @@ The music cancels out, leaving a voice that speaks the password:
 18547936..*
 ```
 
-## 4. Privilege Escalation — LXD
+## 4. Privilege Escalation - LXD
 
 We use the discovered credentials to log in via SSH:
 
@@ -192,9 +191,9 @@ content = r"""# HackTheBox Writeup: Calamity
 ## Table of Contents
 
 1. [Enumeration](#1-enumeration)
-2. [Initial Foothold — Web Application](#2-initial-foothold--web-application)
-3. [Pivoting to User — xalvas](#3-pivoting-to-user--xalvas)
-4. [Privilege Escalation — LXD](#4-privilege-escalation--lxd)
+2. [Initial Foothold - Web Application](#2-initial-foothold--web-application)
+3. [Pivoting to User - xalvas](#3-pivoting-to-user--xalvas)
+4. [Privilege Escalation - LXD](#4-privilege-escalation--lxd)
 5. [Attack Path Summary](#5-attack-path-summary)
 
 ---
@@ -216,7 +215,7 @@ Checking the web root, we find a standard page. Directory fuzzing with `ffuf` or
 | `/admin.php` | `200` | Administration login page |
 | `/uploads/` | `301` | Directory listing enabled, but empty |
 
-## 2. Initial Foothold — Web Application
+## 2. Initial Foothold - Web Application
 
 Navigating to `http://<IP>/admin.php`, we are presented with a login form.
 
@@ -245,7 +244,7 @@ Testing the interpreter with PHP confirms server-side PHP code execution:
 
 We obtain Remote Code Execution (RCE) as `www-data`.
 
-### Getting a shell — the janitor bypass
+### Getting a shell - the janitor bypass
 
 Attempts to obtain a reverse shell using standard methods fail because the shell process is terminated shortly after starting.
 
@@ -265,7 +264,7 @@ Then trigger a reverse shell using the renamed binary:
 
 Alternatively, the original notes mention using a webshell such as `phpbash.php` or a static C reverse shell.
 
-## 3. Pivoting to User — xalvas
+## 3. Pivoting to User - xalvas
 
 With a shell as `www-data`, we enumerate local users and home directories:
 
@@ -276,7 +275,7 @@ ls -la /home/
 
 We find a user named `xalvas`. The following files in `/home/xalvas/` are interesting:
 
-- `user.txt` — readable by `www-data`
+- `user.txt` - readable by `www-data`
 - `recov.wav`
 - `alarmclocks/rick.wav`
 - `intrusions`
@@ -297,7 +296,7 @@ The music cancels out, leaving a voice that speaks the password:
 18547936..*
 ```
 
-## 4. Privilege Escalation — LXD
+## 4. Privilege Escalation - LXD
 
 We use the discovered credentials to log in via SSH:
 
