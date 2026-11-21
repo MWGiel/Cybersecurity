@@ -105,7 +105,6 @@ fake_model = EvilPayload()
 
 torch.save(fake_model, "/models/evil_zip.pth")
 
-print("Payload created.")
 ```
 
 ### Verifying the File Type
